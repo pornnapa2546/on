@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On the way online</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
+    <!-- Hover CSS -->
+    <link rel="stylesheet" href="css/hover-min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Section Start -->
+    <header class="navbar">
+        <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
+            <div class="container">
+                <!-- logo -->
+                <div class="logo">
+                    <a href="index.html" title="Logo">
+                        <img src="img/2.png" alt="Logo" class="img-responsive">
+                    </a>
+                </div>
+                <!-- Main Menu -->
+                <div class="menu text-right">
+                    <ul>
+                        <li><a class="hvr-underline-from-center" href="index.html">Home</a></li>
+                        <li><a class="hvr-underline-from-center" href="foods.html">Drinks</a></li>
+                        <li><a class="hvr-underline-from-center" href="order.html">Order</a></li>
+                        <li><a class="hvr-underline-from-center" href="contact.html">Contact</a></li>
+                        <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
+                        <li>
+                            <a id="shopping-cart" class="shopping-cart">
+                                <i class="fa fa-cart-arrow-down"></i>
+                                <span class="badge">4</span>
+                            </a>
+                            <div id="cart-content" class="cart-content">
+                                <h3 class="text-center">Shopping Cart</h3>
+                                <table class="cart-table" border="0">
+                                    <tr>
+                                        <th>Food</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Qty</th>
+                                        <th>Total</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="img/food/p1.jpg" alt="Food"></td>
+                                        <td>Pizza</td>
+                                        <td>$ 8.00</td>
+                                        <td>1</td>
+                                        <td>$ 8.00</td>
+                                        <td><a href="#" class="btn-delete">&times;</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="img/food/s1.jpg" alt="Food"></td>
+                                        <td>Sandwich</td>
+                                        <td>$ 8.00</td>
+                                        <td>1</td>
+                                        <td>$ 8.00</td>
+                                        <td><a href="#" class="btn-delete">&times;</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="img/food/b1.jpg" alt="Food"></td>
+                                        <td>Burder</td>
+                                        <td>$ 8.00</td>
+                                        <td>1</td>
+                                        <td>$ 8.00</td>
+                                        <td><a href="#" class="btn-delete">&times;</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="4">Total</th>
+                                        <th>$24.00$</th>
+                                        <th></th>
+                                    </tr>
+                                </table>
+                                <a href="order.html" class="btn-primary">Confirm Order</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Navigation Section End -->
+
+    <!-- Food Search Section Start -->
+    <section class="food-search text-center" >
+        <div class="container">
+            <form action="">
+                <input type="search" placeholder="Search for food..." required>
+                <input type="submit" value="Search" class="btn-primary">
+            </form>
+        </div>
+    </section>
+    <!-- Food Search Section End -->
+
+    <!-- Foods Section Start -->
+    <section class="food-menu">
+        <div class="container">
+            <h2 class="text-center">เมนูทั้งหมด (All Menu)</h2>
+            <div class="heading-border"></div>
+            <div class="grid-2">
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/1.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>อเมริกาโน่ (Americano)</h4>
+                            <p class="food-price">35 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+<div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/5.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>อเมริกาโน่ น้ำผึ้ง (Honey Americano)</h4>
+                            <p class="food-price">45 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+<div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/6.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>อเมริกาโน่ น้ำผึ้งมะนาว (Honey Lemon Americano)</h4>
+                            <p class="food-price">45 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+<div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/2.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>อเมริกาโน่ น้ำส้ม (Orange Americano)</h4>
+                            <p class="food-price">45 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+              <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/4.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>อเมริกาโน่ พีช (Peach Americano)</h4>
+                            <p class="food-price">45 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/3.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>อเมริกาโน่ ลิ้นจี่ (Lychee Americano)</h4>
+                            <p class="food-price">45 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/7.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>อเมริกาโน่ มะพร้าว (Coconut Americano)</h4>
+                            <p class="food-price">45 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/8.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>เอสเพรสโซ่ (Espresso)</h4>
+                            <p class="food-price">35 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/9.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>คาปูชิโน่ (Capuchino)</h4>
+                            <p class="food-price">35 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/10.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>มอคค่า (Mocca)</h4>
+                            <p class="food-price">35 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/22.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>ลาเต้ (Latte)</h4>
+                            <p class="food-price">35 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/23.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>คาราเมล ลาเต้ (Caramel Latte)</h4>
+                            <p class="food-price">35 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/24.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>มัคคิอาโต้ (Macchiato)</h4>
+                            <p class="food-price">35 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/25.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>คาราเมล มัคคิอาโต้ (Caramel Macchiato)</h4>
+                            <p class="food-price">35 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/13.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>ชาเขียว (Green Tea)</h4>
+                            <p class="food-price">35 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/12.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>ชาไทย (Thai Tea)</h4>
+                            <p class="food-price">35 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/14.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>ชาดำ (Black Tea)</h4>
+                            <p class="food-price">35 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/16.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>ชามะนาว (Lemon Tea)</h4>
+                            <p class="food-price">35 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/17.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>ชาแดงน้ำผึ้งมะนาว (Honey Lemon Tea)</h4>
+                            <p class="food-price">35 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/18.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>ชาเขียวมะนาว (Lemon Green Tea)</h4>
+                            <p class="food-price">35 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/19.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>ชาเขียวน้ำผึ้งมะนาว (Honey Lemon Green Tea)</h4>
+                            <p class="food-price">35 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/20.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>ชาพีช (Peach Tea)</h4>
+                            <p class="food-price">35 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/21.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>ลิ้นจี่มะนาว (Lychee Lemon)</h4>
+                            <p class="food-price">35 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/29.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>นมชมพู (Pink Milk)</h4>
+                            <p class="food-price">35 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/30.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>นมสด (Fresh Milk)</h4>
+                            <p class="food-price">35 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/31.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>นมสด คาราเมล (Caramel Fresh Milk)</h4>
+                            <p class="food-price">35 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/11.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>โกโก้ (Cocoa)</h4>
+                            <p class="food-price">35 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/26.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>มัทฉะ ลาเต้ (Matcha Latte)</h4>
+                            <p class="food-price">55 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/27.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>เพียวมัทฉะ (Puer Matcha)</h4>
+                            <p class="food-price">55 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/28.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>มัทฉะน้ำผึ้ง (Matcha Honey)</h4>
+                            <p class="food-price">55 ฿</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- Foods Section End -->
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- Jquery UI -->
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <!-- Custom JS -->
+    <script src="js/custom.js"></script>
+</body>
+</html>
