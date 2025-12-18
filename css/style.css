@@ -612,4 +612,19 @@ fieldset legend {
   white-space: nowrap;
 }
 
+.qr-payment {
+  width: 220px;
+  display: block;
+  margin: 15px auto;
+  border: 2px solid #1e88e5;
+  border-radius: 12px;
+}
+
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #1e88e5;
+  border-radius: 6px;
+}
+
 

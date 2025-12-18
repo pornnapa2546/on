@@ -121,6 +121,20 @@
 
         <p class="label">Address</p>
         <input type="text" required>
+<fieldset>
+  <legend>Payment</legend>
+
+  <p class="label">Scan QR Code to Pay</p>
+  <img src="img/qr-payment.jpg"
+       alt="QR Payment"
+       class="qr-payment">
+
+  <p class="label">Upload Payment Slip</p>
+  <input type="file"
+         id="slip"
+         accept="image/*"
+         required>
+</fieldset>
 
         <!-- ❗ ไม่ใช้ submit -->
         <input type="button"
