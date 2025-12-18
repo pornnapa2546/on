@@ -576,3 +576,16 @@ fieldset legend {
   top: -10px;
   left: -5px;
 }
+
+/* ทำให้คอลัมน์ Name กว้างขึ้น */
+.cart-table th:nth-child(2),
+.cart-table td:nth-child(2) {
+  width: 35%;
+  text-align: left;
+}
+
+.cart-table td:nth-child(2) {
+  padding-left: 10px;
+  word-break: break-word;
+}
+
