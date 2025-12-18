@@ -72,6 +72,10 @@ $(".btn-add").on("click", function () {
   updateTotal();
 });
 
+$(".clear-cart").on("click", function () {
+  $(".cart-table tr:not(:first)").remove();
+});
+
 
 });
 
