@@ -34,31 +34,30 @@ $(function () {
   });
 
   // Update Total Price JS
-  function updateTotal() {
-    let total = 0;
-    $("#cart-content tr").each(function () {
-      const rowTotal = parseFloat($(this).find("td:nth-child(5)").text().replace("$", ""));
-      if (!isNaN(rowTotal)) {
-        total += rowTotal;
-      }
-    });
-    $("#cart-content th:nth-child(5)").text("$" + total.toFixed(2));
-    $(".tbl-full th:nth-child(6)").text("$" + total.toFixed(2));
-  }
+function updateTotal() {
+  let total = 0;
+
+  $(".cart-item").each(function () {
+    total += parseFloat(
+      $(this).find("td:nth-child(5)").text().replace("฿", "")
+    );
+  });
+
+  $(".total-price").text(total + " ฿");
+}
+
 
 // Shopping Cart Toggle JS
 $(".btn-add").on("click", function () {
   const box = $(this).closest(".food-menu-box");
 
   const name = box.find("h4").text();
-  const priceText = box.find(".food-price").text();
-  const price = parseFloat(priceText);
+  const price = parseFloat(box.find(".food-price").text());
   const qty = parseInt(box.find("input[type='number']").val());
-
   const total = price * qty;
 
   const row = `
-    <tr>
+    <tr class="cart-item">
       <td>-</td>
       <td>${name}</td>
       <td>${price} ฿</td>
@@ -68,12 +67,14 @@ $(".btn-add").on("click", function () {
     </tr>
   `;
 
-  $(".cart-table tr:last").before(row);
+  $(".cart-total").before(row);
   updateTotal();
 });
 
+
 $(".clear-cart").on("click", function () {
-  $(".cart-table tr:not(:first)").remove();
+  $(".cart-item").remove();
+  updateTotal();
 });
 
 
