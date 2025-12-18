@@ -1,5 +1,14 @@
 $(function () {
-  // Main Menu JS
+
+  /* ===============================
+     GLOBAL CART (หัวใจระบบ)
+  =============================== */
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+
+  /* ===============================
+     MAIN MENU / SCROLL
+  =============================== */
   $(window).scroll(function () {
     if ($(this).scrollTop() < 50) {
       $("nav").removeClass("site-top-nav");
@@ -10,75 +19,122 @@ $(function () {
     }
   });
 
-  // Shopping Cart Toggle JS
+
+  /* ===============================
+     SHOPPING CART TOGGLE
+  =============================== */
   $("#shopping-cart").on("click", function () {
     $("#cart-content").toggle("blind", "", 500);
   });
 
-  // Back-To-Top Button JS
-  $("#back-to-top").click(function (event) {
-    event.preventDefault();
-    $("html, body").animate(
-      {
-        scrollTop: 0,
-      },
-      1000
-    );
+
+  /* ===============================
+     BACK TO TOP
+  =============================== */
+  $("#back-to-top").click(function (e) {
+    e.preventDefault();
+    $("html, body").animate({ scrollTop: 0 }, 1000);
   });
 
-  // Delete Cart Item JS
-  $(document).on("click", ".btn-delete", function (event) {
-    event.preventDefault();
-    $(this).closest("tr").remove();
-    updateTotal();
+
+  /* ===============================
+     ADD TO CART (รวมสินค้าซ้ำ)
+  =============================== */
+  $(".btn-add").on("click", function () {
+    const box = $(this).closest(".food-menu-box");
+    const name = box.find("h4").text();
+    const price = parseFloat(box.find(".food-price").text());
+    const qty = parseInt(box.find("input[type='number']").val());
+
+    const existing = cart.find(item => item.name === name);
+
+    if (existing) {
+      existing.qty += qty;
+    } else {
+      cart.push({ name, price, qty });
+    }
+
+    saveCart();
+    renderCart();
   });
 
-  // Update Total Price JS
-function updateTotal() {
-  let total = 0;
 
-  $(".cart-item").each(function () {
-    total += parseFloat(
-      $(this).find("td:nth-child(5)").text().replace("฿", "")
-    );
+  /* ===============================
+     DELETE ITEM
+  =============================== */
+  $(document).on("click", ".btn-delete", function (e) {
+    e.preventDefault();
+    const index = $(this).data("index");
+    cart.splice(index, 1);
+    saveCart();
+    renderCart();
   });
 
-  $(".total-price").text(total + " ฿");
-}
+
+  /* ===============================
+     CLEAR CART
+  =============================== */
+  $(".clear-cart").on("click", function () {
+    cart = [];
+    saveCart();
+    renderCart();
+  });
 
 
-// Shopping Cart Toggle JS
-$(".btn-add").on("click", function () {
-  const box = $(this).closest(".food-menu-box");
+  /* ===============================
+     RENDER CART
+  =============================== */
+  function renderCart() {
+    $(".cart-item").remove();
 
-  const name = box.find("h4").text();
-  const price = parseFloat(box.find(".food-price").text());
-  const qty = parseInt(box.find("input[type='number']").val());
-  const total = price * qty;
+    let total = 0;
 
-  const row = `
-    <tr class="cart-item">
-      <td>-</td>
-      <td>${name}</td>
-      <td>${price} ฿</td>
-      <td>${qty}</td>
-      <td>${total} ฿</td>
-      <td><a href="#" class="btn-delete">&times;</a></td>
-    </tr>
-  `;
+    cart.forEach((item, index) => {
+      const itemTotal = item.price * item.qty;
+      total += itemTotal;
 
-  $(".cart-total").before(row);
-  updateTotal();
+      const row = `
+        <tr class="cart-item">
+          <td>-</td>
+          <td>${item.name}</td>
+          <td>${item.price} ฿</td>
+          <td>${item.qty}</td>
+          <td>${itemTotal} ฿</td>
+          <td>
+            <a href="#" class="btn-delete" data-index="${index}">&times;</a>
+          </td>
+        </tr>
+      `;
+
+      $(".cart-total").before(row);
+    });
+
+    $(".total-price").text(total + " ฿");
+    updateBadge();
+  }
+
+
+  /* ===============================
+     BADGE COUNT
+  =============================== */
+  function updateBadge() {
+    let count = 0;
+    cart.forEach(item => count += item.qty);
+    $(".badge").text(count);
+  }
+
+
+  /* ===============================
+     LOCAL STORAGE
+  =============================== */
+  function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+
+
+  /* ===============================
+     INIT (โหลดตอนเปิดเว็บ)
+  =============================== */
+  renderCart();
+
 });
-
-
-$(".clear-cart").on("click", function () {
-  $(".cart-item").remove();
-  updateTotal();
-});
-
-
-});
-
-
-
