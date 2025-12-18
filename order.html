@@ -16,12 +16,63 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+<!-- Navigation Section Start -->
+    <header class="navbar">
+        <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
+            <div class="container">
+                <!-- logo -->
+                <div class="logo">
+                    <a href="index.html" title="Logo">
+                        <img src="img/2.png" alt="Logo" class="img-responsive">
+                    </a>
+                </div>
+                <!-- Main Menu -->
+                <div class="menu text-right">
+                    <ul>
+                        <li><a class="hvr-underline-from-center" href="index.html">Home</a></li>
+                        <li><a class="hvr-underline-from-center" href="foods.html">Drinks</a></li>
+                        <li><a class="hvr-underline-from-center" href="order.html">Order</a></li>
+                        <li><a class="hvr-underline-from-center" href="contact.html">Contact</a></li>
+                        <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
+                        <li>
+                            <a id="shopping-cart" class="shopping-cart">
+  <i class="fa fa-cart-arrow-down"></i>
+  <span class="badge">0</span>
+</a>
 
-<header class="navbar">
-  <div class="container">
-    <h2>Order Summary</h2>
-  </div>
-</header>
+<div id="cart-content" class="cart-content">
+  <h3 class="text-center">Shopping Cart</h3>
+
+  <table class="cart-table" border="0">
+    <tr>
+      <th>Drink</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Qty</th>
+      <th>Total</th>
+      <th>Action</th>
+    </tr>
+
+
+    <tr class="cart-total">
+      <th colspan="4">Total</th>
+      <th class="total-price">0 ฿</th>
+      <th></th>
+    </tr>
+  </table>
+
+  <a href="order.html" class="btn-primary">Confirm Order</a>
+</div>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Navigation Section End -->
+
+    <!-- Food Order Section Start -->
 
 <section class="order">
   <div class="container">
