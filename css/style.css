@@ -417,3 +417,162 @@ fieldset legend {
   border: none;
 }
 /* Contact Page Style End */
+/* =========================
+   ORDER PAGE STYLE
+========================= */
+
+.order {
+  padding: 60px 0;
+  background: #f9f9f9;
+}
+
+.order .container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* TABLE */
+.tbl-full {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.tbl-full th,
+.tbl-full td {
+  padding: 12px 10px;
+  text-align: center;
+}
+
+.tbl-full thead {
+  background: #ff6b00;
+  color: #fff;
+}
+
+.tbl-full tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+.tbl-full tfoot {
+  background: #fafafa;
+  font-weight: bold;
+}
+
+#order-total {
+  color: #ff6b00;
+  font-size: 18px;
+}
+
+/* REMOVE BUTTON */
+.remove-item {
+  color: #ff3b3b;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.remove-item:hover {
+  color: darkred;
+}
+
+/* =========================
+   FORM STYLE
+========================= */
+
+.form fieldset {
+  border: 2px solid #ff6b00;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.form legend {
+  font-weight: bold;
+  color: #ff6b00;
+  padding: 0 10px;
+}
+
+.form .label {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.form input[type="text"],
+.form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form input:focus {
+  outline: none;
+  border-color: #ff6b00;
+}
+
+/* CONFIRM BUTTON */
+#confirm-order {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  background: #ff6b00;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#confirm-order:hover {
+  background: #e65c00;
+}
+
+/* =========================
+   CART DROPDOWN
+========================= */
+
+.cart-content {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  width: 420px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  display: none;
+  z-index: 999;
+}
+
+.cart-table {
+  width: 100%;
+  font-size: 14px;
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 8px;
+  text-align: center;
+}
+
+.cart-table th {
+  background: #ff6b00;
+  color: #fff;
+}
+
+.total-price {
+  color: #ff6b00;
+  font-weight: bold;
+}
+
+/* BADGE */
+.badge {
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 3px 7px;
+  font-size: 12px;
+  position: relative;
+  top: -10px;
+  left: -5px;
+}
