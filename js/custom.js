@@ -1,11 +1,39 @@
-// Delete Cart Item
-$(document).on("click", ".btn-delete", function (e) {
-  e.preventDefault();
-  $(this).closest("tr").remove();
-  updateTotal();
-});
+$(function () {
+  // Main Menu JS
+  $(window).scroll(function () {
+    if ($(this).scrollTop() < 50) {
+      $("nav").removeClass("site-top-nav");
+      $("#back-to-top").fadeOut();
+    } else {
+      $("nav").addClass("site-top-nav");
+      $("#back-to-top").fadeIn();
+    }
+  });
 
-// Update Total
+  // Shopping Cart Toggle JS
+  $("#shopping-cart").on("click", function () {
+    $("#cart-content").toggle("blind", "", 500);
+  });
+
+  // Back-To-Top Button JS
+  $("#back-to-top").click(function (event) {
+    event.preventDefault();
+    $("html, body").animate(
+      {
+        scrollTop: 0,
+      },
+      1000
+    );
+  });
+
+  // Delete Cart Item JS
+  $(document).on("click", ".btn-delete", function (event) {
+    event.preventDefault();
+    $(this).closest("tr").remove();
+    updateTotal();
+  });
+
+  // Update Total Price JS
 function updateTotal() {
   let total = 0;
 
@@ -18,9 +46,11 @@ function updateTotal() {
   $(".total-price").text(total + " ฿");
 }
 
-// Add To Cart
+
+// Shopping Cart Toggle JS
 $(".btn-add").on("click", function () {
   const box = $(this).closest(".food-menu-box");
+
   const name = box.find("h4").text();
   const price = parseFloat(box.find(".food-price").text());
   const qty = parseInt(box.find("input[type='number']").val());
@@ -41,8 +71,14 @@ $(".btn-add").on("click", function () {
   updateTotal();
 });
 
-// Clear Cart
+
 $(".clear-cart").on("click", function () {
   $(".cart-item").remove();
   updateTotal();
 });
+
+
+});
+
+
+
