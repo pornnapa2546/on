@@ -24,7 +24,6 @@ $(function () {
     $("#order-items").append(`
       <tr>
         <td>${index + 1}</td>
-        <td>-</td>
         <td>${item.name}</td>
         <td>${item.price} ฿</td>
         <td>${item.qty}</td>
