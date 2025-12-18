@@ -556,12 +556,12 @@ fieldset legend {
 }
 
 .cart-table th {
-  background: #ff6b00;
-  color: #fff;
+  background: #fdfcfc;
+  color: #090909;
 }
 
 .total-price {
-  color: #ff6b00;
+  color: #ff0000;
   font-weight: bold;
 }
 
