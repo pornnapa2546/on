@@ -595,4 +595,20 @@ fieldset legend {
   white-space: normal;
 }
 
+/* ทำให้กล่อง Shopping Cart สูงขึ้น */
+.cart-content {
+  min-height: 450px;   /* ปรับตัวเลขได้ */
+}
+
+.cart-content {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.cart-table td,
+.cart-table th {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
 
