@@ -1,115 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>On the way online</title>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
-    <!-- Hover CSS -->
-    <link rel="stylesheet" href="css/hover-min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>Confirm Order</title>
+
+  <!-- CSS เดิมของคุณ -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <!-- Navigation Section Start -->
-    <header class="navbar">
-        <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
-            <div class="container">
-                <!-- logo -->
-                <div class="logo">
-                    <a href="index.html" title="Logo">
-                        <img src="img/2.png" alt="Logo" class="img-responsive">
-                    </a>
-                </div>
-                <!-- Main Menu -->
-                <div class="menu text-right">
-                    <ul>
-                        <li><a class="hvr-underline-from-center" href="index.html">Home</a></li>
-                        <li><a class="hvr-underline-from-center" href="foods.html">Drinks</a></li>
-                        <li><a class="hvr-underline-from-center" href="order.html">Order</a></li>
-                        <li><a class="hvr-underline-from-center" href="contact.html">Contact</a></li>
-                        <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
-                        <li>
-                            <a id="shopping-cart" class="shopping-cart">
-  <i class="fa fa-cart-arrow-down"></i>
-  <span class="badge">0</span>
-</a>
 
-<div id="cart-content" class="cart-content">
-  <h3 class="text-center">Shopping Cart</h3>
+<header class="navbar">
+  <div class="container">
+    <h2>Order Summary</h2>
+  </div>
+</header>
 
-  <table class="cart-table" border="0">
-    <tr>
-      <th>Drink</th>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Qty</th>
-      <th>Total</th>
-      <th>Action</th>
-    </tr>
+<section class="order">
+  <div class="container">
 
+    <table class="tbl-full" border="0">
+      <thead>
+        <tr>
+          <th>S.N.</th>
+          <th>Drink</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Qty</th>
+          <th>Total</th>
+          <th>Action</th>
+        </tr>
+      </thead>
 
-    <tr class="cart-total">
-      <th colspan="4">Total</th>
-      <th class="total-price">0 ฿</th>
-      <th></th>
-    </tr>
-  </table>
+      <tbody id="order-items">
+        <!-- JS ใส่รายการตรงนี้ -->
+      </tbody>
 
-  <a href="order.html" class="btn-primary">Confirm Order</a>
-</div>
+      <tfoot>
+        <tr>
+          <th colspan="5">Total</th>
+          <th id="order-total">0 ฿</th>
+          <th></th>
+        </tr>
+      </tfoot>
+    </table>
 
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <!-- Navigation Section End -->
+    <form class="form">
+      <fieldset>
+        <legend>Delivery Details</legend>
 
-    <!-- Food Order Section Start -->
-    <section class="order">
-        <div class="container">
-            <h2 class="text-center">Fill this form to confirm your order.</h2>
-            <table class="tbl-full" border="0">
-                <tr>
-                    <th>S.N.</th>
-                    <th>Drinks</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Qty</th>
-                    <th>Total</th>
-                    <th>Action</th>
-                </tr>
-                
-            </table>
-            <form action="" class="form">
-                <fieldset>
-                    <legend>Delivery Details</legend>
-                    <p class="label">Full Name</p>
-                    <input type="text" placeholder="Enter your name..." required>
-                    <p class="label">Phone Number</p>
-                    <input type="contact" placeholder="Enter your phone..." required>
-                    <p class="label">Email</p>
-                    <input type="email" placeholder="Enter your email..." required>
-                    <p class="label">Address</p>
-                    <input type="text" placeholder="Enter your address..." required>
-                    <input type="submit" value="Confirm Order" class="btn-primary">
-                </fieldset>
-            </form>
-        </div>
-    </section>
-    <!-- Food Order Section End -->
+        <p class="label">Full Name</p>
+        <input type="text" required>
 
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <!-- Jquery UI -->
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-    <!-- Custom JS -->
-    <script src="js/custom.js"></script>
+        <p class="label">Phone Number</p>
+        <input type="text" required>
+
+        <p class="label">Email</p>
+        <input type="email" required>
+
+        <p class="label">Address</p>
+        <input type="text" required>
+
+        <!-- ❗ ไม่ใช้ submit -->
+        <input type="button"
+               value="Confirm Order"
+               class="btn-primary"
+               id="confirm-order">
+      </fieldset>
+    </form>
+
+  </div>
+</section>
+
+<!-- JS หน้า order -->
+<script src="js/order.js"></script>
 </body>
 </html>
