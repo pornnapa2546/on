@@ -49,10 +49,12 @@ $(function () {
 // Shopping Cart Toggle JS
 $(".btn-add").on("click", function () {
   const box = $(this).closest(".food-menu-box");
+
   const name = box.find("h4").text();
   const priceText = box.find(".food-price").text();
   const price = parseFloat(priceText);
-  const qty = box.find("input[type='number']").val();
+  const qty = parseInt(box.find("input[type='number']").val());
+
   const total = price * qty;
 
   const row = `
@@ -69,6 +71,7 @@ $(".btn-add").on("click", function () {
   $(".cart-table tr:last").before(row);
   updateTotal();
 });
+
 
 });
 
