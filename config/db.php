@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db   = "ontheway"; // ❗ แก้ชื่อตรงนี้
+$db   = "on_the_way"; // ชื่อ database ใน phpMyAdmin
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 
