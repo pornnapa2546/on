@@ -1,10 +1,14 @@
 $(function () {
 
-  // ดึง cart จาก localStorage
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  let total = 0;
+  /* ===============================
+     LOAD CART
+  =============================== */
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let totalPrice = 0;
 
-  // ถ้าไม่มีสินค้า
+  /* ===============================
+     EMPTY CART
+  =============================== */
   if (cart.length === 0) {
     $("#order-items").html(`
       <tr>
@@ -13,18 +17,24 @@ $(function () {
         </td>
       </tr>
     `);
+    $("#order-total").text("0 ฿");
     return;
   }
 
-  // แสดงสินค้า
+  /* ===============================
+     RENDER ORDER ITEMS
+  =============================== */
   cart.forEach((item, index) => {
     const itemTotal = item.price * item.qty;
-    total += itemTotal;
+    totalPrice += itemTotal;
 
     $("#order-items").append(`
       <tr>
         <td>${index + 1}</td>
-        <td>${item.name}</td>
+        <td>
+          ${item.name}<br>
+          <small>🌡 ${item.temp} | 🍬 ${item.sweet}</small>
+        </td>
         <td>${item.price} ฿</td>
         <td>${item.qty}</td>
         <td>${itemTotal} ฿</td>
@@ -35,10 +45,11 @@ $(function () {
     `);
   });
 
-  // แสดงราคารวม
-  $("#order-total").text(total + " ฿");
+  $("#order-total").text(totalPrice + " ฿");
 
-  // ลบสินค้าในหน้า order
+  /* ===============================
+     REMOVE ITEM
+  =============================== */
   $(document).on("click", ".remove-item", function (e) {
     e.preventDefault();
     const index = $(this).data("index");
@@ -47,25 +58,54 @@ $(function () {
     location.reload();
   });
 
-  // ยืนยันออเดอร์
+  /* ===============================
+     CONFIRM ORDER
+  =============================== */
   $("#confirm-order").on("click", function () {
-    alert("สั่งซื้อเรียบร้อยแล้ว");
-    localStorage.removeItem("cart");
-    window.location.href = "index.html";
+
+    const slip = document.getElementById("slip")?.files[0];
+    if (!slip) {
+      alert("กรุณาอัปโหลดสลิป");
+      return;
+    }
+
+    const customerName = $("input[name='customer_name']").val();
+    const phone        = $("input[name='phone']").val();
+
+    if (!customerName || !phone) {
+      alert("กรุณากรอกชื่อและเบอร์โทร");
+      return;
+    }
+
+    let formData = new FormData();
+    formData.append("slip", slip);
+    formData.append("total", totalPrice);
+    formData.append("customer_name", customerName);
+    formData.append("phone", phone);
+    formData.append("cart", JSON.stringify(cart));
+
+    $.ajax({
+      url: "save-order.php",
+      method: "POST",
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function () {
+        alert("สั่งซื้อสำเร็จ รอแอดมินตรวจสอบ");
+        localStorage.removeItem("cart");
+        window.location.href = "index.php";
+      },
+      error: function () {
+        alert("เกิดข้อผิดพลาด กรุณาลองใหม่");
+      }
+    });
   });
 
-});
-
-$("#confirm-order").on("click", function () {
-  const slip = $("#slip").val();
-
-  if (!slip) {
-    alert("กรุณาแนบสลิปการโอนเงิน");
-    return;
+  /* ===============================
+     PROMPTPAY QR (ถ้ามีฟังก์ชัน)
+  =============================== */
+  if (typeof generatePromptPayQR === "function") {
+    generatePromptPayQR(totalPrice);
   }
 
-  alert("ยืนยันคำสั่งซื้อเรียบร้อย 🎉");
-
-  // เคลียร์ตะกร้า
-  localStorage.removeItem("cart");
 });

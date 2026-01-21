@@ -24,7 +24,7 @@ $(function () {
      SHOPPING CART TOGGLE
   =============================== */
   $("#shopping-cart").on("click", function () {
-    $("#cart-content").toggle("blind", "", 500);
+    $("#cart-content").toggle("blind", "", 300);
   });
 
 
@@ -33,25 +33,45 @@ $(function () {
   =============================== */
   $("#back-to-top").click(function (e) {
     e.preventDefault();
-    $("html, body").animate({ scrollTop: 0 }, 1000);
+    $("html, body").animate({ scrollTop: 0 }, 800);
   });
 
 
   /* ===============================
-     ADD TO CART (รวมสินค้าซ้ำ)
+     ADD TO CART (รองรับ temp / sweet)
   =============================== */
   $(".btn-add").on("click", function () {
-    const box = $(this).closest(".food-menu-box");
-    const name = box.find("h4").text();
-    const price = parseFloat(box.find(".food-price").text());
-    const qty = parseInt(box.find("input[type='number']").val());
 
-    const existing = cart.find(item => item.name === name);
+    const box   = $(this).closest(".food-menu-box");
+    const name  = box.find("h4").text().trim();
+    const price = parseFloat(box.find(".food-price").text());
+    const temp  = box.find(".drink-temp").val();
+    const sweet = box.find(".drink-sweet").val();
+    const qty   = parseInt(box.find(".qty").val());
+
+    if (!temp || !sweet) {
+      alert("กรุณาเลือกอุณหภูมิ และระดับความหวาน");
+      return;
+    }
+
+    // 🔑 รวมซ้ำโดยดู name + temp + sweet
+    const existing = cart.find(item =>
+      item.name === name &&
+      item.temp === temp &&
+      item.sweet === sweet
+    );
 
     if (existing) {
       existing.qty += qty;
     } else {
-      cart.push({ name, price, qty });
+      cart.push({
+        name,
+        price,
+        temp,
+        sweet,
+        qty
+
+      });
     }
 
     saveCart();
@@ -85,19 +105,21 @@ $(function () {
      RENDER CART
   =============================== */
   function renderCart() {
-    $(".cart-item").remove();
 
+    $(".cart-item").remove();
     let total = 0;
 
     cart.forEach((item, index) => {
+
       const itemTotal = item.price * item.qty;
       total += itemTotal;
 
       const row = `
         <tr class="cart-item">
-
           <td>${item.name}</td>
           <td>${item.price} ฿</td>
+          <td>${item.temp}</td>
+          <td>${item.sweet}</td>
           <td>${item.qty}</td>
           <td>${itemTotal} ฿</td>
           <td>
@@ -138,3 +160,5 @@ $(function () {
   renderCart();
 
 });
+
+

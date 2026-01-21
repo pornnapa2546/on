@@ -1,0 +1,13 @@
+# Config (secret)
+config/db.php
+config/line-config.php
+
+# Upload files
+/uploads/slips/
+/uploads/reviews/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
